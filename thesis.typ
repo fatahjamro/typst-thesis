@@ -23,4 +23,4 @@
 #include "chapters/05-qls-codes.typ"
 #include "chapters/06-conclusion.typ"
 
-#bibliography("bibliography.bib", style: "apa")
+#bibliography("bibliography.bib")

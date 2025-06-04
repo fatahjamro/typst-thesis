@@ -89,7 +89,7 @@
   show outline.entry.where(
     level: 1
   ): set block(above: 1.2em)
-  outline(title: [Table of Contents #v(10mm)])
+  outline(depth: 2, title: [Table of Contents #v(10mm)])
 
   set heading(
     numbering: "1.1",
