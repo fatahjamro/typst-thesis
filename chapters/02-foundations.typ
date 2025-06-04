@@ -4,6 +4,7 @@
 #import "@preview/ctheorems:1.1.3": *
 #import "@preview/physica:0.9.5": *
 
+
 = Foundations
 
 #lorem(30)
@@ -234,4 +235,3 @@ setwire(0)                          , 1      , 1      , 1        , 1        , 1,
 #lorem(200)
 
 #lorem(200)
-

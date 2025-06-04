@@ -4,6 +4,7 @@
 #import "@preview/ctheorems:1.1.3": *
 #import "@preview/physica:0.9.5": *
 
+
 = Conclusion
 
 #lorem(200)
@@ -49,6 +50,3 @@
 #lorem(200)
 
 #lorem(200)
-
-
-

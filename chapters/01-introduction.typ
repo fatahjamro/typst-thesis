@@ -4,6 +4,7 @@
 #import "@preview/ctheorems:1.1.3": *
 #import "@preview/physica:0.9.5": *
 
+
 = Introduction to Quantum Information Theory
 
 #lorem(30)
@@ -61,6 +62,3 @@ cetz.canvas({
 }),
 caption: [$op("P")("error") = 1 - op("P")("< 2") = 1 - (1-p)^9 + 9 p (1-p)^8$],
 placement: none)
-
-
-
