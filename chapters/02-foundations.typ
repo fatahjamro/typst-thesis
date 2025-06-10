@@ -26,7 +26,7 @@ It can be in a superposition of basis states:
 $
 ket(psi) = alpha ket(0) + beta ket(1) #h(4mm) text("with") alpha,  beta in bb(C), \ |alpha|^2 + |beta|^2 = 1
 $
-
+$alpha$ and $beta$ are called the probability amplitudes of basis vector $ket(0)$ and $ket(1)$, respectively. The sum of the absolute squares of these probability amplitudes must equal 1, ensuring that the quantum state is normalized.
 
 === Nielsen & Chuang @NielsenChuang
 
