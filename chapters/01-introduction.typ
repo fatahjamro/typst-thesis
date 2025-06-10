@@ -5,7 +5,6 @@
 #import "@preview/physica:0.9.5": *
 
 
-
 = Introduction to Quantum Information Theory
 
 Current era is referred to as the second quantum revolution. It has become possible due to the advancement in the field of quantum information science. Second quantum revolution is promising to develop next generation technologies that will be way better that the transistor technologies that we have due to the first quantum revolution.  Quantum computing stands at the forefront of a second quantum technological revolution @deutsch2020HarnessingPowerSecond.
@@ -31,7 +30,22 @@ At the heart of this capability are the quantum principles such as superposition
 
 == Bits versus Qubits
 
-#lorem(100)
+The *bit* is the fundamental concept of classical computation and classical information. Quantum computation and quantum information are built upon an analogous concept, the quantum bit, or qubit for short @nielsen2010QuantumComputationQuantum.
+
+
+A *bit* (short for binary digit) is the most basic unit of information in classical computing. It can exist in one of two distinct and mutually exclusive states: 0 or 1 
+$
+  b in {0, 1}
+$
+
+In classical computation, all data, whether numbers, text, images, or videos, is ultimately represented as sequences of bits. A bit is like a tiny switch that can be ON (1) or OFF (0). These states are usually implemented physically using voltage levels, magnetic polarity, or light pulses in hardware. The binary system (base-2) underpins all classical computing, and bits are the building blocks of all digital information @mackenzie1980coded.
+
+A *qubit* (short for quantum bit) is the fundamental unit of quantum information. Unlike a classical bit, a qubit can exist in a superposition of states, meaning it can be in a state that is a linear combination of the basis states 0 and 1. Mathematically, a qubit's superposition state can be represented as:
+$
+   1/sqrt(2) ket(0) + 1/sqrt(2) ket(1)
+$
+
+The above expression means the qubit is $50%$ zero and $50%$ one. A qubit can any linear combination of the two basis states, such as 30% zero and 70% one or 80% zero and 20% one.
 
 #lorem(100)
 
