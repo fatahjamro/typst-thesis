@@ -14,19 +14,19 @@
 Comparing Definitions of a Qubit
 
 The term qubit, short for quantum bit, was coined by American physicist Benjamin Schumacher in 1995 @Schumacher1995quantumcoding.
-A qubit is the basic unit of quantum information.
+A qubit is the basic unit of quantum information, analogous to the classical bit but governed by the principles of quantum mechanics.
 Different sources define the term with varying emphasis depending on their field (physics, computing, engineering).
 
 
 === Core Definition
 
-A qubit is a two-level quantum system, whose state is described by a unit vector in the complex Hilbert space $bb(C)^2$. 
-It can be in a superposition of basis states:
+A qubit is a two-level quantum system, whose state is described by a unit vector in the complex Hilbert space $bb(C)^2$, typically expressed as a linear combination (superposition) of two orthogonal basis states:
 
 $
 ket(psi) = alpha ket(0) + beta ket(1) #h(4mm) text("with") alpha,  beta in bb(C), \ |alpha|^2 + |beta|^2 = 1
 $
-$alpha$ and $beta$ are called the probability amplitudes of basis vector $ket(0)$ and $ket(1)$, respectively. The sum of the absolute squares of these probability amplitudes must equal 1, ensuring that the quantum state is normalized.
+
+$ket(psi)$ is a qubit with basis vectors $ket(0)$ and $ket(1)$, $alpha$ and $beta$ are called the probability amplitudes of basis vector $ket(0)$ and $ket(1)$, respectively. The sum of the absolute squares of these probability amplitudes must equal 1, ensuring that the quantum state is normalized.
 
 === Nielsen & Chuang @nielsen2010QuantumComputationQuantum
 
