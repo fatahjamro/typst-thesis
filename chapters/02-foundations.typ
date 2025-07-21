@@ -376,8 +376,18 @@ A density matrix is a mathematical representation of a quantum state that can de
 1. Unit Trace: The trace of the density matrix must equal 1, i.e., $Tr(rho) = 1$.
 2. Positive semi-definite: The density matrix must be positive semi-definite, meaning all its eigenvalues are non-negative.
 
+=== Example
 
-#lorem(100)
+For a qubit in state:
+
+$ ket(psi) = alpha ket(0) + beta ket(1) $
+
+the density matrix is:
+
+$ rho = mat([
+  [abs(alpha)^2, alpha * conj(beta)],
+  [conj(alpha) * beta, abs(beta)^2]
+]) $
 
 
 == Quantum Channels
