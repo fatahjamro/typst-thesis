@@ -26,20 +26,7 @@ $
 ket(psi) = alpha ket(0) + beta ket(1) #h(4mm) text("with") alpha,  beta in bb(C), \ |alpha|^2 + |beta|^2 = 1
 $
 
-$ket(psi)$ is a qubit with basis vectors $ket(0)$ and $ket(1)$, $alpha$ and $beta$ are called the probability amplitudes of basis vector $ket(0)$ and $ket(1)$, respectively. The sum of the absolute squares of these probability amplitudes must equal 1, ensuring that the quantum state is normalized.
-
-=== Nielsen & Chuang @nielsen2010QuantumComputationQuantum
-
-A qubit is a two-state quantum-mechanical system, such as the spin of an electron or the polarization of a photon. Mathematically, a pure qubit state can be represented as a normalized vector in a two-dimensional complex vector space.
-
-$
-ket(psi) = alpha ket(0) +  beta ket(1)
-$
-
-$
-|alpha|^2 + |beta|^2 = 1
-$
-
+$ket(psi)$ is a qubit with basis vectors $ket(0)$ and $ket(1)$, $alpha$ and $beta$ are called the probability amplitudes of basis vector $ket(0)$ and $ket(1)$, respectively. The sum of the absolute squares of these probability amplitudes must equal 1, ensuring that the quantum state is normalized @nielsen2010QuantumComputationQuantum.
 
 === John Preskill @preskillNotes
 
