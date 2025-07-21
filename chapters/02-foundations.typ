@@ -385,8 +385,8 @@ $ ket(psi) = alpha ket(0) + beta ket(1) $
 the density matrix is:
 
 $ rho = mat([
-  [abs(alpha)^2, alpha * conj(beta)],
-  [conj(alpha) * beta, abs(beta)^2]
+  [abs(alpha)^2, alpha * bar(beta)],
+  [bar(alpha) * beta, abs(beta)^2]
 ]) $
 
 
