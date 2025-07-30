@@ -26,54 +26,14 @@ $
 ket(psi) = alpha ket(0) + beta ket(1) #h(4mm) text("with") alpha,  beta in bb(C), \ |alpha|^2 + |beta|^2 = 1
 $
 
-$ket(psi)$ is a qubit with basis vectors $ket(0)$ and $ket(1)$, $alpha$ and $beta$ are called the probability amplitudes of basis vector $ket(0)$ and $ket(1)$, respectively. The sum of the absolute squares of these probability amplitudes must equal 1, ensuring that the quantum state is normalized @nielsen2010QuantumComputationQuantum.
-
-=== John Preskill @preskillNotes
-
-A qubit is a quantum system whose state space is the two-dimensional complex Hilbert space:
-$
-bb(H)_2 = bb(C)^2
-$
-
-- Strong emphasis on Hilbert spaces, unitary operations, and quantum circuits.
-- Discusses density matrices, entanglement, and tensor product structure.
-
-
-=== Oxford Dictionary of Physics @PhysicsOxfordDictionary
-
-A unit of quantum information equivalent to the quantum state of a two-level system, which can be in a superposition of the basis states.
-
-The Oxford Dictionary of Physics provides a more accessible definition for general audiences.
-It focuses on the concepts of superposition and measurement.
-
-
-=== IBM Qiskit Textbook @qiskit2024
-
-A qubit is a quantum version of the classical bit and is the basic unit of quantum information.
-Unlike a bit, which can be either 0 or 1, a qubit can be in a superposition of both.
+$ket(psi)$ is a qubit with basis vectors $ket(0)$ and $ket(1)$, $alpha$ and $beta$ are called the probability amplitudes of basis vector $ket(0)$ and $ket(1)$, respectively. The sum of the absolute squares of these probability amplitudes must equal 1, ensuring that the quantum state is normalized@nielsen2010QuantumComputationQuantum, @preskillNotes
 
 Qiskit has a practical focus on physical implementations.
-It introduces the Bloch sphere parametrization:
+It introduces the Bloch sphere parametrization @qiskit2024 :
 
 $
 ket(psi) = cos(theta / 2) ket(0) + e^(i phi) sin(theta / 2) ket(1)
 $
-
-
-=== Wikipedia @qubitWikipedia
-
-In quantum computing, a qubit is the basic unit of quantum information -- the quantum version of the classical binary bit.
-
-Wikipedia includes both mathematical and physical realization aspects in its definition.
-It also covers the use of qubits in entanglement, quantum circuits, and decoherence.
-
-
-=== MIT OpenCourseWare @mitQuantumComplexityTheory
-
-A qubit is a two-level quantum system whose state is a linear combination of orthonormal basis vectors $ket(0)$ and $ket(1)$, forming a unit vector in $bb(C)^2$.
-
-MIT OpenCourseWare teaches from the quantum algorithm perspective and makes strong use of Dirac notation, gates, and measurement postulates.
-
 
 == Mathematical Summary
 

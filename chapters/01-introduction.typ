@@ -30,7 +30,7 @@ At the heart of this capability are the quantum principles such as superposition
 
 == Bits versus Qubits
 
-The *bit* is the fundamental concept of classical computation and classical information. Quantum computation and quantum information are built upon an analogous concept, the quantum bit, or qubit for short @nielsen2010QuantumComputationQuantum.
+The *bit* is the fundamental concept of classical computation and classical information. Quantum computation and quantum information are built upon an analogous concept, the quantum bit, or qubit for short.
 
 
 A *bit* (short for binary digit) is the most basic unit of information in classical computing. It can exist in one of two distinct and mutually exclusive states: 0 or 1. It is the basic building block of classical computers and is used to represent and store information in binary form. A qubit can exist in a superposition of states, meaning it can be in a state of 0, 1, or both simultaneously. 
