@@ -152,13 +152,57 @@ setwire(0)                          , 1      , 1      , 1        , 1        , 1,
 
 #set math.mat(delim: "[")
 
-== Density Matrices
 
-A density matrix is a way to describe the state of a quantum system. especially when we do not have complete information about it.
+== Density Matrix Formalism
 
--- If a quantum system is in a pure state (like a single known wavefunction, e.g., $ket(psi) = alpha ket(0) + beta ket(1)$), we can describe it with that wavefunction alone.
+The density matrix formalism provides a way to represent quantum states using matrices instead of state vectors. This is especially useful when dealing with statistical mixtures of states or systems where full knowledge of the quantum state is not available @Fano1957DescriptionDensityMatrix.
 
--- But often, a system might be in a mixed state, which means it's in one of several possible states, each with a certain probability.
+For a *pure state* represented by a ket vector $ket(psi)$, the corresponding density matrix is defined as:
+
+$ rho = ket(psi) bra(psi) $
+
+This expression is the *outer product* of the state vector with its conjugate transpose (bra). It encapsulates all the measurable properties of the quantum system in matrix form.
+
+In contrast, a *mixed state*—a statistical ensemble of pure states—is described by a weighted sum of such outer products:
+
+$ rho = sum_i p_i ket(psi_i)bra(psi_i) $
+
+where $p_i$ are classical probabilities associated with each pure state $ket(psi)$, and $ sum_i p_i = 1$.
+
+This formalism is essential for describing open quantum systems, decoherence, and systems with classical uncertainty over quantum states.
+
+== Definition (Density Matrix):
+
+A density matrix is a mathematical representation of a quantum state that can describe both pure and mixed states. It is a positive semi-definite operator on a Hilbert space, which allows for the calculation of expectation values and probabilities in quantum mechanics.
+
+=== Figure  here:
+
+=== Conditions
+
+1. Unit Trace: The trace of the density matrix must equal 1, i.e., $Tr(rho) = 1$.
+2. Positive semi-definite: The density matrix must be positive semi-definite, meaning all its eigenvalues are non-negative.
+
+=== Example
+
+For a qubit in state:
+
+$ ket(psi) = alpha ket(0) + beta ket(1) $
+
+the density matrix is:
+
+$ rho = mat(
+  [abs(alpha)^2, alpha * bar(beta)],
+  [bar(alpha) * beta, abs(beta)^2]
+) $
+
+
+// == Density Matrices
+
+// A density matrix is a way to describe the state of a quantum system, especially when we do not have complete information about it.
+
+// -- If a quantum system is in a pure state (like a single known wave-function, e.g., $ket(psi) = alpha ket(0) + beta ket(1)$), we can describe it with that wave-function alone.
+
+// -- But often, a system might be in a mixed state, which means it's in one of several possible states, each with a certain probability.
 
 
 === Pure States
@@ -272,7 +316,7 @@ $
 $
 
 === Example 2
-proability $p_1$ of getting $ket(0)$ state is $p_1 = 1/10$, probability $p_2$ of getting state $ket(1)$ is $3/10$, and probability $p_3$ of getting state $ket(+)$ is $6/10$.
+probability $p_1$ of getting $ket(0)$ state is $p_1 = 1/10$, probability $p_2$ of getting state $ket(1)$ is $3/10$, and probability $p_3$ of getting state $ket(+)$ is $6/10$.
 
 $
   rho &= p_1 ket(0) bra(0) + p_2 ket(1) bra(1) + p_3 ket(+) bra(+) \
@@ -303,52 +347,103 @@ $
       &= mat(3 / 8, 1 / 8; 1 / 8, 3 / 8)  
 $
 
+The density matrix method provides a single way to describe both pure and mixed states. It is very useful for studying quantum systems that interact with their environment, lose coherence, or are used in quantum technologies.
+
+== Unitary Operators
+
+A *unitary operator* is an operator $U$ on a Hilbert space $H$ such that it is a bounded linear operator $(U: H -> H)$ and its inverse is equal to its adjoint:  
+
+$ U^{-1} = U^dagger   #h(4mm) text("also written as")  U^* $
+
+A unitary operator satisfies the following property:  
+
+$ 
+U U^dagger = U^dagger U = I 
+$
+
+where $I$ is the identity operator $(I: H -> H)$.  
+
+- The condition $U^dagger U = I$ defines an *isometry*.  
+- The condition $U U^dagger = I$ defines a *co-isometry*.  
+
+Thus, a unitary operator is a bounded linear operator that is both an isometry and a co-isometry @halmos2012hilbertspaceproblem.  
+
+A unitary operator $U$ is *surjective* and preserves the inner product of the Hilbert space $H$. For all vectors $A$ and $B$ in $H$:  
+
+$ bra("UA")ket("UB")_H = bra(A)ket(B)_H $
+
+=== Product of Unitary Operators
+
+The product of two unitary operators is also unitary.  
+
+If $U$ and $V$ are unitary operators, then their product $U V$ satisfies:  
+
+$
+U U^dagger = U^dagger U = I \
+V V^dagger = V^dagger V = I
+$
+
+Then,  
+
+$
+(U V)(U V)^dagger = (U V)(V^dagger U^dagger) = I \
+(U V)^dagger (U V) = (V^dagger U^dagger)(U V) = I
+$
+
+Hence, the product $U V$ is also unitary.  
+
+=== Summary
+
+Unitary operators are isomorphisms of Hilbert space because they preserve the fundamental structure of the space, including lengths, angles, and inner products.
+
+== Unitary Error Bases (UEB)
+
+Unitary error bases, also known as unitary operator bases, are a fundamental concept in quantum information theory.  
+They are constructed from unitary operators, which form the building blocks for describing errors in quantum systems.  
+A complete set of unitary operators can represent any possible error in a quantum information system.  
+Unitary error bases were introduced in the mid-1990s and have significant applications in the construction of quantum error correcting codes @knill1996NonBinaryUnitary, @knill1996GroupRepresentationsError.
+
+=== Unitary Operators and Errors
+
+In quantum mechanics, a unitary operator is a special type of linear transformation that:
+
+- Preserves the norm (length) of a quantum state  
+- Is reversible, meaning it has an inverse equal to its adjoint  
+
+Because of these properties, unitary operators are ideal for representing errors in quantum computations.  
+Errors can be understood as transformations applied to a quantum state that may change its encoded information.
 
 
+=== Definition: Unitary Error Basis
+
+A unitary error basis is a set of unitary matrices that forms an orthonormal basis for representing errors on an $n$-dimensional quantum system.  
+
+- *Orthonormality:*  
+  A set $U$ of $n^2$ unitary $n times n$ matrices is a unitary error basis if and only if it is orthonormal with respect to the inner product:  
+
+  $
+   bra(A)ket(B)_H = frac(Tr(A^dagger B), n) 
+   $
+
+  where:  
+  - `Tr(M)` is the trace of matrix $M$  
+  - $A^dagger$ is the conjugate transpose of $A$  
+  - The factor $1/n$ ensures the inner product is normalized
+
+- *Completeness:*  
+  The set $U$ is complete if any arbitrary error on an $n$-dimensional quantum state can be expressed as a linear combination of the elements of $U$.
 
 
-== Density Matrix Formalism
+=== Example: Pauli Matrices
 
-The density matrix formalism provides a way to represent quantum states using matrices instead of state vectors. This is especially useful when dealing with statistical mixtures of states or systems where full knowledge of the quantum state is not available.
+The Pauli matrices form a $d^2$ order unitary error basis for $d = 2$ and can be generalized to higher-dimensional systems@klappenecker2003UnitaryErrorBases.
 
-For a *pure state* represented by a ket vector $ket(psi)$, the corresponding density matrix is defined as:
-
-$ rho = ket(psi) bra(psi) $
-
-This expression is the *outer product* of the state vector with its conjugate transpose (bra). It encapsulates all the measurable properties of the quantum system in matrix form.
-
-In contrast, a *mixed state*—a statistical ensemble of pure states—is described by a weighted sum of such outer products:
-
-$ rho = sum_i p_i ket(psi)bra(psi) $
-
-where $p_i$ are classical probabilities associated with each pure state $ket(psi)$, and $ sum_i p_i = 1$.
-
-This formalism is essential for describing open quantum systems, decoherence, and systems with classical uncertainty over quantum states.
-
-== Definition (Density Matrix):
-
-A density matrix is a mathematical representation of a quantum state that can describe both pure and mixed states. It is a positive semi-definite operator on a Hilbert space, which allows for the calculation of expectation values and probabilities in quantum mechanics.
-
-=== Figure  here:
-
-=== Conditions
-
-1. Unit Trace: The trace of the density matrix must equal 1, i.e., $Tr(rho) = 1$.
-2. Positive semi-definite: The density matrix must be positive semi-definite, meaning all its eigenvalues are non-negative.
-
-=== Example
-
-For a qubit in state:
-
-$ ket(psi) = alpha ket(0) + beta ket(1) $
-
-the density matrix is:
-
-$ rho = mat([
-  [abs(alpha)^2, alpha * bar(beta)],
-  [bar(alpha) * beta, abs(beta)^2]
-]) $
-
+$ 
+  sigma_I = mat(1, 0; 0, 1), #h(4mm)
+  sigma_x = mat(0, 1; 1, 0), #h(4mm)
+  sigma_y = mat(0, -i; i, 0), #h(4mm)
+  sigma_z = mat(1, 0; 0, -1) #h(4mm)
+$
 
 == Quantum Channels
 
