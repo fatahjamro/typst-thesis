@@ -353,7 +353,7 @@ The density matrix method provides a single way to describe both pure and mixed 
 
 A *unitary operator* is an operator $U$ on a Hilbert space $H$ such that it is a bounded linear operator $(U: H -> H)$ and its inverse is equal to its adjoint:  
 
-$ U^{-1} = U^dagger   #h(4mm) text("also written as")  U^* $
+$ U^(-1) = U^dagger   #h(4mm) text("also written as")  U^* $
 
 A unitary operator satisfies the following property:  
 
@@ -370,7 +370,7 @@ Thus, a unitary operator is a bounded linear operator that is both an isometry a
 
 A unitary operator $U$ is *surjective* and preserves the inner product of the Hilbert space $H$. For all vectors $A$ and $B$ in $H$:  
 
-$ bra("UA")ket("UB")_H = bra(A)ket(B)_H $
+$ braket(U A, U B)_H = braket(A, B)_H $
 
 === Product of Unitary Operators
 
@@ -416,7 +416,7 @@ Errors can be understood as transformations applied to a quantum state that may 
 
 === Definition: Unitary Error Basis
 
-A unitary error basis is a set of unitary matrices that forms an orthonormal basis for representing errors on an $n$-dimensional quantum system.  
+A unitary error basis @klappenecker2003UnitaryErrorBases is a set of unitary matrices that forms an orthonormal basis for representing errors on an $n$-dimensional quantum system.  
 
 - *Orthonormality:*  
   A set $U$ of $n^2$ unitary $n times n$ matrices is a unitary error basis if and only if it is orthonormal with respect to the inner product:  
