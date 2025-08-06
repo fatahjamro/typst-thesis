@@ -455,7 +455,6 @@ Mutually Unbiased Bases (MUB) are fundamental constructs in quantum mechanics an
 These bases, when used in pairs, are characterized by the property that knowledge of a quantum state in one basis provides no information about its state in the other basis, ensuring maximal statistical independence of measurements @ivanovic1997unbiasedprojectorbasis.  
 Transition probability from any state of the first basis to any state of the second basis is independent of the two chosen states @song2020ConstructionMutuallyUnbiased.
 
-
 === Definition (Mutually Unbiased Bases)
 Wootters in 1986 defined as Two orthonormal bases $U$ and $V$ in space $C^d$ are mutually unbiased if and only if the square of the absolute value of the inner product between any vector $u$ from $U$ and any vector $v$ from $V$ is uniformly distributed, mathematically expressed as:
 $ 
@@ -474,6 +473,35 @@ are mutually unbiased based on the definition above, because preparing quantum s
 
 In practical example, measuring the polarization of a photon along one direction, such as vertical or horizontal, gives no information about its polarization along diagonal or circular directions. These different measurements are represented by the Pauli operators $sigma_x$, $sigma_y$, and $sigma_z$, whose eigenstates form a set of mutually unbiased bases@brierley2009MutuallyUnbiasedBases.
 
+
+MUBs are crucial in various applications across quantum information theory:
+
+- Quantum State Estimation: MUBs are used in quantum state estimation to determine the state of a quantum system with high precision @adamson2008ExperimentalQuantumState, @grassl2005TomographyQuantumStates.
+- Quantum Cryptography: MUBs enhance the security protocols in quantum key distribution by ensuring that the eavesdropping attempts can be detected and mitigated effectively @cerf2002SecurityQuantumKey.
+- Quantum Error Correction: MUBs are used in designing quantum error correcting codes to protect quantum information from errors and noise @klappenecker2004ConstructionsMutuallyUnbiased.
+
+
+=== Optimal state determination
+Pairs of MU bases represent measurements that were called "maximally non-commuting" by Schwinger @schwinger1960UnitaryOperatorBases: a measurement in one of the bases reveals no information about the outcome of measurements in the other basis. Ivanovic @ivanovic1981geometricaldescriptionquantal was the first to realise that a set of $d + 1$ bases that are all pairwise mutually unbiased could be applied to quantum state reconstruction.
+
+Suppose there is a source producing identical copies of some unknown quantum state described by a density matrix rho. Since rho is a d times d Hermitian matrix with Tr(rho) = 1, we must determine d^2 - 1 real variables @Fano1957DescriptionDensityMatrix. A non-degenerate projective measurement yields d probabilities which sum to one, so that each measurement performed on a sub-ensemble of states can be used to determine d - 1 variables. A quick calculation reveals that we require at least (d^2 - 1)/(d - 1) = d + 1 projective measurements. Ivanovic demonstrated that d + 1 MU bases are also sufficient to determine any density matrix @ivanovic1981geometricaldescriptionquantal. For example, in dimension two, any density matrix may be expressed as
+
+$ 
+rho = 1/d I + r · sigma 
+$
+
+where $r$ is a vector in the 3-sphere of radius one (called the Bloch ball), and $sigma = (x, y, z)^T$ is a vector of the Pauli matrices $sigma_x, sigma_y, text("and") sigma_z$. By performing measurements corresponding to the three Pauli matrices on multiple copies of $rho$, we are able to determine the vector $r$ up to some statistical accuracy. Therefore, this set of $2 + 1$ bases, whose eigenvectors form a complete set of MU bases, is sufficient to estimate any $2 times 2$ density matrix $rho$.
+
+=== Quantum key distribution
+By sharing a random string of numbers, two parties can encrypt a message in such a way that it appears completely random to an eavesdropper. The "one-time pad" is an unbreakable method of encryption provided the string is truly random and only used once @Shannon1949CommunicationTheory.
+
+The problem comes in having sufficiently many strings, called keys, with which to encrypt all messages you wish to send. This is called the key distribution problem.
+
+By allowing the security of the key distribution protocol to be computationally impossible rather than unconditional, several ingenious methods to distribute keys have been developed. Assuming that an eavesdropper does not possess an infinitely large computer, cryptographic systems can make use of mathematical problems that are very hard to solve. For example, there is no known efficient algorithm to factorize large integers into a product of primes (used in the Rivest-Shamir-Adleman algorithm @rivest1978methodQKD) or to compute the discrete logarithm (used in the Diffe-Hellman-Merkle key exchange @diffie2022newCryptography @hellman1980cryptographic). However, solving these problems is only difficult, not impossible, so that the security of such public key protocols relies on the lack of future developments in mathematics and technology.
+
+In 1970, Wiesner proposed a totally new approach to cryptography @wiesner1983conjugateCoding that was developed by Bennet and Brassard: they presented a key distribution protocol @bennett2014QuantumCryptographyPublic, now known as BB84, that uses properties of quantum systems to ensure its security. This protocol allows two parties, Alice and Bob, to distribute a key such that anyone who attempts to listen in on the quantum signals can, in theory, be detected. The eavesdropper, Eve, is constrained by the physical laws of quantum mechanics. She cannot perform a measurement without introducing a disturbance (Heisenberg's uncertainty principle), copy states (no cloning) or split the signal, since it consists of single photons or particles. Other protocols such as Ekert's @ekert1991QuantumCryptography use entangled particles in such a way that Eve essentially introduces hidden variables destroying the quantum correlations. It is possible to prove that these quantum key distribution (QKD) protocols are secure against all future technological and mathematical advances
+
+The original BB84 protocol and its subsequent generalisation to $d$-dimensional systems exploit the complementarity of MU bases in order to ensure their security. By defining a protocol that uses any bases, Phoenix argues that the MU bases used in the original BB84 are the best choice of bases for the legitimate parties to detect an eavesdropper @phoenix1993quantumCryptography. In other words, MU bases are optimal for this quantum key distribution protocol.
 
 == Quantum Channels
 
