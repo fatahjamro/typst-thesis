@@ -451,17 +451,15 @@ The specific application of mutually unbiased basis in quantum mechanics
 was given by Ivanovic in 1981, particularly in the context of quantum state determination 
 @ivanovic1981geometricaldescriptionquantal.
 
-Mutually Unbiased Bases (MUB) are fundamental constructs in quantum mechanics and quantum information theory, embedding the complementary concept of quantum formalism @paterek2010ConnectionMutuallyUnbiased.  
-These bases, when used in pairs, are characterized by the property that knowledge of a quantum state in one basis provides no information about its state in the other basis, ensuring maximal statistical independence of measurements @ivanovic1997unbiasedprojectorbasis.  
-Transition probability from any state of the first basis to any state of the second basis is independent of the two chosen states @song2020ConstructionMutuallyUnbiased.
-
 === Definition (Mutually Unbiased Bases)
 Wootters in 1986 defined as Two orthonormal bases $U$ and $V$ in space $C^n$ are mutually unbiased if and only if the square of the absolute value of the inner product between any vector $u$ from $U$ and any vector $v$ from $V$ is uniformly distributed, mathematically expressed as:
 $ 
-|braket(u,v)|^2 = 1/n 
+|braket(u,v)|^2 = 1/n #h(4mm) #h(4mm) forall #h(4mm) u in U, #h(4mm) v in V
 $
-for all $u$ in $U$ and $v$ in $V$ @wootters1986quantummechanicsprobability.
 
+Mutually Unbiased Bases (MUB) are fundamental constructs in quantum mechanics and quantum information theory, embedding the complementary concept of quantum formalism @paterek2010ConnectionMutuallyUnbiased.  
+These bases, when used in pairs, are characterized by the property that knowledge of a quantum state in one basis provides no information about its state in the other basis, ensuring maximal statistical independence of measurements @ivanovic1997unbiasedprojectorbasis.  
+Transition probability from any state of the first basis to any state of the second basis is independent of the two chosen states @song2020ConstructionMutuallyUnbiased.
 
 == Quantum Channels
 
