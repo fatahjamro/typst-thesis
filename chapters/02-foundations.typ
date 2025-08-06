@@ -191,8 +191,8 @@ $ ket(psi) = alpha ket(0) + beta ket(1) $
 the density matrix is:
 
 $ rho = mat(
-  [abs(alpha)^2, alpha * bar(beta)],
-  [bar(alpha) * beta, abs(beta)^2]
+  abs(alpha)^2, alpha bar(beta);
+  bar(alpha) beta, abs(beta)^2
 ) $
 
 
@@ -422,8 +422,8 @@ A unitary error basis @klappenecker2003UnitaryErrorBases is a set of unitary mat
   A set $U$ of $n^2$ unitary $n times n$ matrices is a unitary error basis if and only if it is orthonormal with respect to the inner product:  
 
   $
-   bra(A)ket(B)_H = frac(Tr(A^dagger B), n) 
-   $
+   braket(A,B)_H = frac(Tr(A^dagger B), n) 
+  $
 
   where:  
   - `Tr(M)` is the trace of matrix $M$  
@@ -451,15 +451,29 @@ The specific application of mutually unbiased basis in quantum mechanics
 was given by Ivanovic in 1981, particularly in the context of quantum state determination 
 @ivanovic1981geometricaldescriptionquantal.
 
-=== Definition (Mutually Unbiased Bases)
-Wootters in 1986 defined as Two orthonormal bases $U$ and $V$ in space $C^n$ are mutually unbiased if and only if the square of the absolute value of the inner product between any vector $u$ from $U$ and any vector $v$ from $V$ is uniformly distributed, mathematically expressed as:
-$ 
-|braket(u,v)|^2 = 1/n #h(4mm) #h(4mm) forall #h(4mm) u in U, #h(4mm) v in V
-$
-
 Mutually Unbiased Bases (MUB) are fundamental constructs in quantum mechanics and quantum information theory, embedding the complementary concept of quantum formalism @paterek2010ConnectionMutuallyUnbiased.  
 These bases, when used in pairs, are characterized by the property that knowledge of a quantum state in one basis provides no information about its state in the other basis, ensuring maximal statistical independence of measurements @ivanovic1997unbiasedprojectorbasis.  
 Transition probability from any state of the first basis to any state of the second basis is independent of the two chosen states @song2020ConstructionMutuallyUnbiased.
+
+
+=== Definition (Mutually Unbiased Bases)
+Wootters in 1986 defined as Two orthonormal bases $U$ and $V$ in space $C^d$ are mutually unbiased if and only if the square of the absolute value of the inner product between any vector $u$ from $U$ and any vector $v$ from $V$ is uniformly distributed, mathematically expressed as:
+$ 
+|braket(u_i,v_j)|^2 = 1/d #h(4mm) #h(4mm) forall #h(4mm) u in U, #h(4mm) v in V #h(4mm), #h(4mm) i,j= 1,2,3,...,d
+$
+
+=== Example
+For a two-dimensional quantum system or also called qubit system $(d=2)$, the standard basis defined by:
+$
+U = &{ket(0), ket(1)} text("and") V = {ket(+), ket(-)}\
+  &ket(+) = 1/sqrt(2) (ket(0) + ket(1)),\
+  &ket(-) = 1/sqrt(2) (ket(0) - ket(1))
+$
+
+are mutually unbiased based on the definition above, because preparing quantum state in basis $U$ and measuring it in basis $V$ reveal no information about the state of the system, and vice versa.
+
+In practical example, measuring the polarization of a photon along one direction, such as vertical or horizontal, gives no information about its polarization along diagonal or circular directions. These different measurements are represented by the Pauli operators $sigma_x$, $sigma_y$, and $sigma_z$, whose eigenstates form a set of mutually unbiased bases@brierley2009MutuallyUnbiasedBases.
+
 
 == Quantum Channels
 
